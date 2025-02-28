@@ -1,0 +1,11 @@
+ID,name,nif,email,telefone,ativo,createdAt,createdBy,modifiedAt,modifiedBy
+F001,Fornecedor 1,579357397,fornecedor1@empresa.com,+351952297778,False,2023-11-25 15:56:24,admin,2024-12-19 15:56:24,admin
+F002,Fornecedor 2,654656877,fornecedor2@empresa.com,+351935247505,True,2023-10-28 15:56:24,admin,2025-01-24 15:56:24,admin
+F003,Fornecedor 3,836426060,fornecedor3@empresa.com,+351956686125,False,2023-12-20 15:56:24,admin,2025-01-18 15:56:24,admin
+F004,Fornecedor 4,661243040,fornecedor4@empresa.com,+351945684699,True,2023-09-25 15:56:24,admin,2025-01-16 15:56:24,admin
+F005,Fornecedor 5,365936035,fornecedor5@empresa.com,+351922661571,True,2023-03-16 15:56:24,admin,2025-01-10 15:56:24,admin
+F006,Fornecedor 6,601129186,fornecedor6@empresa.com,+351971208052,False,2022-12-13 15:56:24,admin,2024-12-08 15:56:24,admin
+F007,Fornecedor 7,941059260,fornecedor7@empresa.com,+351990526760,True,2023-07-02 15:56:24,admin,2025-02-15 15:56:24,admin
+F008,Fornecedor 8,950462079,fornecedor8@empresa.com,+351932918717,False,2023-12-07 15:56:24,admin,2025-02-20 15:56:24,admin
+F009,Fornecedor 9,745884817,fornecedor9@empresa.com,+351995804276,False,2023-10-20 15:56:24,admin,2024-12-30 15:56:24,admin
+F010,Fornecedor 10,705555228,fornecedor10@empresa.com,+351980927936,False,2023-11-20 15:56:24,admin,2025-02-26 15:56:24,admin

@@ -1,0 +1,14 @@
+POST http://localhost:4004/odata/v4/order/approveOrder
+Content-Type: application/json
+
+{
+    "orderID": "O003"
+}
+
+###
+POST http://localhost:4004/odata/v4/order/askAI
+Content-Type: application/json
+
+{
+    "question": "O que é SAP CAP?"
+}

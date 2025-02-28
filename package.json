@@ -1,0 +1,91 @@
+{
+  "name": "sql-agent",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/hana": "^1",
+    "@cap-js/postgres": "^1",
+    "@cap-js/sqlite": "^1",
+    "@sap-cloud-sdk/http-client": "^3.22.2",
+    "@sap/cds": "^8.5.1",
+    "@sap/cds-common-content": "^2.1.0",
+    "@sap/cds-dk": "^8",
+    "@sap/hdi-deploy": "^5.3.2",
+    "@sap/xssec": "^4",
+    "csv-parse": "^5.6.0",
+    "csv-parser": "^3.0.0",
+    "express": "^4",
+    "hdb": "^0.19.11",
+    "json-rules-engine": "^7.3.0",
+    "rimraf": "^5.0.5",
+    "sinon": "^19.0.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-typescript": "^7.26.0",
+    "@cap-js/cds-types": "^0.6.5",
+    "@types/chai": "^4.2.22",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^20",
+    "@ui5/cli": "^4.0.13",
+    "axios": "^1.7.7",
+    "axios-mock-adapter": "^1.18.2",
+    "babel-jest": "^29.7.0",
+    "chai": "^4.5.0",
+    "chai-as-promised": "^7.1.2",
+    "chai-subset": "^1.6.0",
+    "concurrently": "^9.1.2",
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.5",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.6.3"
+  },
+  "scripts": {
+    "test": "jest --runInBand",
+    "test:no-auth": "cds run --profile no-auth && jest",
+    "start-all": "concurrently \"npm run startdev --prefix ./ \" \"npm start --prefix ./router\"",
+    "start-dev": "concurrently \"npm run startdev --prefix ./ \" \"npm start --prefix ./m22frontend\"",
+    "startdev": "cds-serve",
+    "start": "cds-deploy && cds-serve --profile production",
+    "dbdeploy": "cds deploy --to sqlite:db.sqlite",
+    "undeploy": "cf undeploy tax-irc --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "cds build && cp -r db/data gen/srv/srv/data && rimraf resources mta_archives && mbt build --mtar archive && rm -rf ./gen",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch": "cds w"
+  },
+  "cds": {
+    "requires": {
+      "[development]": {
+        "auth": "mocked",
+        "db": {
+          "kind": "sqlite",
+          "credentials": {
+            "database": "db.sqlite"
+          }
+        }
+      },
+      "[production]": {
+        "auth": "mocked",
+        "db": {
+          "kind": "sqlite",
+          "credentials": {
+            "url": ":memory:"
+          }
+        }
+      }
+    },
+    "features": {
+      "in_memory_db": true
+    }
+  },
+  "imports": {
+    "#cds-models/*": "./@cds-models/*/index.js"
+  },
+  "sapux": [
+    "app/upload"
+  ]
+}
