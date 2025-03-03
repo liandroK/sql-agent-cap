@@ -27,21 +27,51 @@ POST http://localhost:4004/odata/v4/order/orders
 Content-Type: application/json
 
 {
-  "numero": "TEST-APPROVE-02",
-  "data": "2025-03-10T10:00:00Z",
-  "valor_total": 7588.12,
+  "numero": "OC006",
+  "data": "2025-03-04T09:00:00Z",
+  "valor_total": 95.00,
   "status": "PENDENTE",
-  "fornecedor_ID": "F002"
+  "fornecedor_ID": "f1",
+  "previsao_entrega": "2025-03-07T09:00:00Z",
+  "data_entrega": "2025-03-07T08:30:00Z",
+  "materiais": [
+    {
+      "material_ID": "m1",
+      "quantidade": 10,
+      "preco_unitario": 0.50
+    },
+    {
+      "material_ID": "m3",
+      "quantidade": 2,
+      "preco_unitario": 15.00
+    }
+  ]
 }
+
 
 ####
 POST http://localhost:4004/odata/v4/order/orders
 Content-Type: application/json
 
 {
-  "numero": "TEST-REJECT-02",
-  "data": "2025-03-10T11:00:00Z",
-  "valor_total": 7500.00,
+  "numero": "OC007",
+  "data": "2025-03-04T11:00:00Z",
+  "valor_total": 400.00,
   "status": "PENDENTE",
-  "fornecedor_ID": "F001"
+  "fornecedor_ID": "f3",
+  "previsao_entrega": "2025-03-06T11:00:00Z",
+  "data_entrega": "2025-03-10T15:00:00Z",
+  "materiais": [
+    {
+      "material_ID": "m4",
+      "quantidade": 5,
+      "preco_unitario": 28.00
+    },
+    {
+      "material_ID": "m5",
+      "quantidade": 10,
+      "preco_unitario": 7.50
+    }
+  ]
 }
+

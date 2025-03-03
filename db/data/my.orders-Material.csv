@@ -1,0 +1,6 @@
+ID,codigo,descricao,unidade_medida,preco_unitario,createdAt,createdBy,modifiedAt,modifiedBy
+m1,MT001,Parafuso,UN,0.50,2025-03-03T10:00:00Z,admin,2025-03-03T10:00:00Z,admin
+m2,MT002,Cimento,KG,7.00,2025-03-03T10:05:00Z,admin,2025-03-03T10:05:00Z,admin
+m3,MT003,Tinta Azul,L,15.00,2025-03-03T10:10:00Z,admin,2025-03-03T10:10:00Z,admin
+m4,MT004,Chapa Metálica,M2,20.00,2025-03-03T10:15:00Z,admin,2025-03-03T10:15:00Z,admin
+m5,MT005,Canalização,Pç,5.50,2025-03-03T10:20:00Z,admin,2025-03-03T10:20:00Z,admin
