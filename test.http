@@ -20,3 +20,28 @@ Content-Type: application/json
 {
     "question": "Quantas ordens existem na base de dados"
 }
+
+
+####
+POST http://localhost:4004/odata/v4/order/orders
+Content-Type: application/json
+
+{
+  "numero": "TEST-APPROVE-02",
+  "data": "2025-03-10T10:00:00Z",
+  "valor_total": 7588.12,
+  "status": "PENDENTE",
+  "fornecedor_ID": "F002"
+}
+
+####
+POST http://localhost:4004/odata/v4/order/orders
+Content-Type: application/json
+
+{
+  "numero": "TEST-REJECT-02",
+  "data": "2025-03-10T11:00:00Z",
+  "valor_total": 7500.00,
+  "status": "PENDENTE",
+  "fornecedor_ID": "F001"
+}
