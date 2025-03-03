@@ -10,7 +10,7 @@ dotenv.load_dotenv()
 api_key = os.getenv("GROQ_API_KEY")
 
 if not api_key:
-    print("❌ ERRO: A API Key da Groq não está definida no .env!", file=sys.stderr)
+    print("ERRO: A API Key da Groq não está definida no .env!", file=sys.stderr)
     sys.exit(1)
 
 # Inicializar o modelo Llama 3-8B
@@ -24,7 +24,7 @@ def ask_groq(question):
 # Se o script for chamado via terminal
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("❌ ERRO: Nenhuma pergunta fornecida.", file=sys.stderr)
+        print("ERRO: Nenhuma pergunta fornecida.", file=sys.stderr)
         sys.exit(1)
 
     question = " ".join(sys.argv[1:])

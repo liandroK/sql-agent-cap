@@ -2,6 +2,24 @@ const { exec } = require('child_process');
 
 module.exports = (srv) => {
 
+
+    srv.on("askSQL", async (req) => {
+        const { question } = req.data;
+        const sanitizedQuestion = question.replace(/"/g, '\\"'); // Prevenir problemas com aspas
+    
+        return new Promise((resolve, reject) => {
+          exec(`python3 srv/sql_agent.py "${sanitizedQuestion}"`, (error, stdout, stderr) => {
+            if (error || stderr) {
+              console.error(`Erro ao executar Python: ${stderr || error.message}`);
+              reject("Erro ao processar a pergunta.");
+              return;
+            }
+            console.log(`Resposta do modelo SQL: ${stdout.trim()}`);
+            resolve(stdout.trim());
+          });
+        });
+      });
+
     srv.on('order', async (req) => {
         const { orderID } = req.data;
 
@@ -44,3 +62,4 @@ module.exports = (srv) => {
     });
 
 };
+

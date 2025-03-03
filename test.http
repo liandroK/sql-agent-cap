@@ -12,3 +12,11 @@ Content-Type: application/json
 {
     "question": "O que é SAP CAP?"
 }
+
+####
+POST http://localhost:4004/odata/v4/order/askSQL
+Content-Type: application/json
+
+{
+    "question": "Quantas ordens existem na base de dados"
+}

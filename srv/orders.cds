@@ -32,5 +32,7 @@ service OrderService {
 
     action askAI(question: String) returns String;
 
+    action askSQL(question: String) returns String;
+
 
 }
