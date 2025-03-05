@@ -111,7 +111,7 @@ approval_prompt_template = PromptTemplate(
         "1) Se fornecedor.ativo=False (0), REJEITAR IMEDIATAMENTE, independentemente de outros fatores.\n"
         "2) Se existir pelo menos uma ordem APROVADA do mesmo fornecedor, com valor dentro de +/-20%, então APROVAR.\n"
         "3) Caso contrário, REJEITAR.\n\n"
-        "Respondes apenas com 'APROVAR' ou 'REJEITAR'."
+        "Respondes apenas com 'APROVAR' ou 'REJEITAR', e noutra linha o processo de decisão."
     ),
 )
 
